@@ -1,0 +1,305 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);/* This is to ensure that the navbar stays on top of other elements */
+  }
+
+.nav .nav-item .nav-link:hover {
+    transition: ease-in-out 0.4s;
+    color: #9ccd62 !important;
+}
+
+/*To change the Bootstrap navbar toggler into an 'X' when opened*/
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+}
+
+.toggler-bar {
+    width: 28px;
+    height: 2px;
+    background-color: #9ccd62;
+    display: block;
+    transition: all 0.3s;
+    margin: 4px 0;
+}
+
+/* Rotate first bar */
+.navbar-toggler[aria-expanded="true"] .top-bar {
+    transform: translateY(8px) rotate(45deg);
+}
+
+/* Fade out the second bar */
+.navbar-toggler[aria-expanded="true"] .middle-bar {
+    opacity: 0;
+}
+
+/* Rotate third bar */
+.navbar-toggler[aria-expanded="true"] .bottom-bar {
+    transform: translateY(-5px) rotate(-45deg);
+}
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #F1FAEE;
+    font-size: 4rem;
+}
+
+.roller {
+    height: 4.125rem;
+    line-height: 4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #1D3557;
+}
+
+
+#spare-time {
+    font-size: 1rem;
+    letter-spacing: 1rem;
+    margin-top: 0;
+
+}
+
+.roller #rolltext {
+    position: absolute;
+    top: 0;
+    animation: slide 5s infinite;
+}
+
+@keyframes slide {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: -4rem;
+    }
+
+    50% {
+        top: -8rem;
+    }
+
+    72.5% {
+        top: -12.25rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #F1FAEE;
+        font-size: 2.125rem;
+    }
+
+    .roller {
+        height: 2.6rem;
+        line-height: 2.125rem;
+    }
+
+    #spare-time {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .roller #rolltext {
+        animation: slide-mob 5s infinite;
+    }
+
+    @keyframes slide-mob {
+        0% {
+            top: 0;
+        }
+
+        25% {
+            top: -2.125rem;
+        }
+
+        50% {
+            top: -4.25rem;
+        }
+
+        72.5% {
+            top: -6.375rem;
+        }
+    }
+}
+/* .banner {
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    position: relative;
+    background-image: url(https://i.pinimg.com/originals/88/15/63/881563d6444b370fa4ceea0c3183bb4c.gif);
+    background-repeat: no-repeat;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+} */
+.box{
+    position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;
+}
+.box-overlay{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: #9ccd62;
+    /* background: -moz-linear-gradient(left, #d92cf9 0%, #b636ff 100%);
+    background: -webkit-linear-gradient(left, #d92cf9 0%, #b636ff 100%);
+    background: linear-gradient(to right, #d92cf9 0%, #b636ff 100%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d92cf9', endColorstr='#b636ff', GradientType=1); */
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+.box:hover .box-overlay{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    top: 0;
+  }
+  .image-container{
+    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;
+}
+.image-overlay{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: slategray;
+    opacity: 60%;
+    color:whitesmoke;
+    font-size: 50px;
+    /* background: -moz-linear-gradient(left, #d92cf9 0%, #b636ff 100%);
+    background: -webkit-linear-gradient(left, #d92cf9 0%, #b636ff 100%);
+    background: linear-gradient(to right, #d92cf9 0%, #b636ff 100%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d92cf9', endColorstr='#b636ff', GradientType=1); */
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+.image-container:hover .image-overlay{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    top: 0;
+  }
+.carousel-control-prev{
+    background-color: lightgray;
+}
+.carousel-control-next{
+    background-color: lightgray;
+}
+
+.timeline{
+    margin: 20px 0px;
+    position: absolute;
+    height: 90%;
+    width: 1px;
+    left: 50%;
+    top: 1%;
+    background-color: gray;
+}
+#circle{
+    position: absolute;
+    left: 33.4%;
+    margin: 20px 0px;
+}
+@media screen and (max-width: 768px) {
+     .timeline {
+            left: 0;
+            transform: none; /* Reset the left positioning for smaller screens */
+        }
+        #circle {
+            left: -16.6%;
+            transform: none; /* Reset the left positioning for smaller screens */
+        }
+        
+    
+}
+@media screen and (max-width: 576px) {
+    .timeline {
+        display: none;
+       }
+       #circle{
+          display: none;
+       }
+       
+   
+}
